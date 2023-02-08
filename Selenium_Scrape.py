@@ -34,11 +34,11 @@ while True:
     comps = scraper.find_elements(By.CLASS_NAME, "thumbnail")
     for comp in comps:
         comp_name = comp.find_element(By.CLASS_NAME, 'title').get_attribute('title')
-        price = comp.find_element(By. CLASS_NAME, 'caption')
+        price = comp.find_element(By.TAG_NAME, 'h4')
         specs = comp.find_element(By. CLASS_NAME, 'description')
         reviews = comp.find_element(By.CLASS_NAME, 'ratings')
         writer.writerow(
-            [unique_id, comp_name, price.text, specs.text, reviews.text[:2]])
+            [unique_id,comp_name ,price.text[1:], specs.text, reviews.text[:2]])
         unique_id += 1
         
     try:
