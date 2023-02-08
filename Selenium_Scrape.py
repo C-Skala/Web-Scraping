@@ -38,7 +38,7 @@ while True:
         specs = comp.find_element(By. CLASS_NAME, 'description')
         reviews = comp.find_element(By.CLASS_NAME, 'ratings')
         writer.writerow(
-            [unique_id, specs.text, price.text, specs.text, reviews.text[:2]])
+            [unique_id, comp_name, price.text, specs.text, reviews.text[:2]])
         unique_id += 1
         
     try:
